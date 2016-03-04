@@ -1,5 +1,8 @@
 exports.toRoman = function (input) {
   var output = '';
+  if (input == 9) {
+    return 'IX';
+  }
   if (input >= 5) {
     output += 'V';
     input -= 5;
