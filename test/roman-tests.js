@@ -29,5 +29,6 @@ describe('roman', function () {
     testToRoman(16, 'XVI');
     testToRoman(17, 'XVII');
     testToRoman(18, 'XVIII');
+    testToRoman(19, 'XIX');
   });
 });
