@@ -11,8 +11,9 @@ exports.toRoman = function (input) {
     output += 'V';
     input -= 5;
   }
-  if (input == 4) {
-    return 'IV';
+  if (input >= 4) {
+    output += 'IV';
+    input -= 4;
   }
   while (input >= 1) {
     output += 'I';
