@@ -8,7 +8,6 @@ exports.toRoman = function (input) {
     {numeral: 'I', value: 1},
   ];
   var output = '';
-  var repeatResult;
 
   mapping.forEach(function (item) {
     while (input >= item.value) {
@@ -19,13 +18,3 @@ exports.toRoman = function (input) {
 
   return output;
 };
-
-function repeatNumerals(input, numeralValue, numeral) {
-  var output = { numerals: '', subtracted: 0};
-  while (input >= numeralValue) {
-    output.numerals += numeral;
-    output.subtracted += numeralValue;
-    input -= numeralValue;
-  }
-  return output;
-}
