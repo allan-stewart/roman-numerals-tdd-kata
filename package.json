@@ -1,0 +1,19 @@
+{
+  "name": "roman-numerals-tdd-kata",
+  "version": "1.0.0",
+  "description": "A roman numerals kata.",
+  "main": "roman.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "mocha --watch"
+  },
+  "author": "Allan Stewart",
+  "license": "MIT",
+  "private": true
+}
