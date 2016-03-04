@@ -13,10 +13,10 @@ exports.toRoman = function (input) {
   output += repeatResult.numerals;
   input -= repeatResult.subtracted;
 
-  if (input >= 5) {
-    output += 'V';
-    input -= 5;
-  }
+  repeatResult = repeatNumerals(input, 5, 'V');
+  output += repeatResult.numerals;
+  input -= repeatResult.subtracted;
+
   if (input >= 4) {
     output += 'IV';
     input -= 4;
