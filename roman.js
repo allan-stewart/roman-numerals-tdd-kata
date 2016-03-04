@@ -1,10 +1,11 @@
 exports.toRoman = function (input) {
   var output = '';
   var repeatResult;
-  if (input >= 40) {
-    output += 'XL';
-    input -= 40;
-  }
+
+  repeatResult = repeatNumerals(input, 40, 'XL');
+  output += repeatResult.numerals;
+  input -= repeatResult.subtracted;
+
   repeatResult = repeatNumerals(input, 10, 'X');
   output += repeatResult.numerals;
   input -= repeatResult.subtracted;
@@ -24,6 +25,7 @@ exports.toRoman = function (input) {
   repeatResult = repeatNumerals(input, 1, 'I');
   output += repeatResult.numerals;
   input -= repeatResult.subtracted;
+
   return output;
 };
 
