@@ -8,10 +8,11 @@ exports.toRoman = function (input) {
   repeatResult = repeatNumerals(input, 10, 'X');
   output += repeatResult.numerals;
   input -= repeatResult.subtracted;
-  if (input == 9) {
-    output += 'IX';
-    input -= 9;
-  }
+
+  repeatResult = repeatNumerals(input, 9, 'IX');
+  output += repeatResult.numerals;
+  input -= repeatResult.subtracted;
+
   if (input >= 5) {
     output += 'V';
     input -= 5;
