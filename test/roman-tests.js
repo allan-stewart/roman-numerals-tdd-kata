@@ -62,16 +62,28 @@ describe('roman', function () {
     testToRoman(49, 'XLIX');
     testToRoman(50, 'L');
 
+    testToRoman(87, 'LXXXVII');
+
     testToRoman(90, 'XC');
+    testToRoman(91, 'XCI');
 
     testToRoman(100, 'C');
 
+    testToRoman(239, 'CCXXXIX');
+
     testToRoman(400, 'CD');
+
+    testToRoman(444, 'CDXLIV');
 
     testToRoman(500, 'D');
 
+    testToRoman(692, 'DCXCII');
+
     testToRoman(900, 'CM');
 
+    testToRoman(999, 'CMXCIX');
     testToRoman(1000, 'M');
+
+    testToRoman(2016, 'MMXVI');
   });
 });
