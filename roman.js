@@ -1,10 +1,15 @@
 exports.toRoman = function (input) {
+  var mapping = [
+    {numeral: 'XL', value: 40}
+  ];
   var output = '';
   var repeatResult;
 
-  repeatResult = repeatNumerals(input, 40, 'XL');
-  output += repeatResult.numerals;
-  input -= repeatResult.subtracted;
+  mapping.forEach(function (item) {
+    repeatResult = repeatNumerals(input, item.value, item.numeral);
+    output += repeatResult.numerals;
+    input -= repeatResult.subtracted;
+  });
 
   repeatResult = repeatNumerals(input, 10, 'X');
   output += repeatResult.numerals;
