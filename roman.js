@@ -1,4 +1,5 @@
 exports.toRoman = function (input) {
+  var output = '';
   if (input == 6) {
     return 'VI';
   }
@@ -8,11 +9,9 @@ exports.toRoman = function (input) {
   if (input == 4) {
     return 'IV';
   }
-  if (input == 3) {
-    return 'III';
+  while (input >= 1) {
+    output += 'I';
+    input--;
   }
-  if (input == 2) {
-    return 'II';
-  }
-  return 'I';
+  return output;
 };
