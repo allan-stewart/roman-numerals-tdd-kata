@@ -51,5 +51,14 @@ describe('roman', function () {
     testToRoman(38, 'XXXVIII');
     testToRoman(39, 'XXXIX');
     testToRoman(40, 'XL');
+    testToRoman(41, 'XLI');
+    testToRoman(42, 'XLII');
+    testToRoman(43, 'XLIII');
+    testToRoman(44, 'XLIV');
+    testToRoman(45, 'XLV');
+    testToRoman(46, 'XLVI');
+    testToRoman(47, 'XLVII');
+    testToRoman(48, 'XLVIII');
+    testToRoman(49, 'XLIX');
   });
 });
