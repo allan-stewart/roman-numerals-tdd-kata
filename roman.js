@@ -1,4 +1,7 @@
 exports.toRoman = function (input) {
+  if (input == 5) {
+    return 'V';
+  }
   if (input == 4) {
     return 'IV';
   }
