@@ -1,3 +1,3 @@
 exports.toRoman = function (input) {
-  return '';
+  return 'I';
 };
