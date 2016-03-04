@@ -1,6 +1,11 @@
 exports.toRoman = function (input) {
   var mapping = [
-    {numeral: 'XL', value: 40}
+    {numeral: 'XL', value: 40},
+    {numeral: 'X', value: 10},
+    {numeral: 'IX', value: 9},
+    {numeral: 'V', value: 5},
+    {numeral: 'IV', value: 4},
+    {numeral: 'I', value: 1},
   ];
   var output = '';
   var repeatResult;
@@ -10,26 +15,6 @@ exports.toRoman = function (input) {
     output += repeatResult.numerals;
     input -= repeatResult.subtracted;
   });
-
-  repeatResult = repeatNumerals(input, 10, 'X');
-  output += repeatResult.numerals;
-  input -= repeatResult.subtracted;
-
-  repeatResult = repeatNumerals(input, 9, 'IX');
-  output += repeatResult.numerals;
-  input -= repeatResult.subtracted;
-
-  repeatResult = repeatNumerals(input, 5, 'V');
-  output += repeatResult.numerals;
-  input -= repeatResult.subtracted;
-
-  repeatResult = repeatNumerals(input, 4, 'IV');
-  output += repeatResult.numerals;
-  input -= repeatResult.subtracted;
-
-  repeatResult = repeatNumerals(input, 1, 'I');
-  output += repeatResult.numerals;
-  input -= repeatResult.subtracted;
 
   return output;
 };
