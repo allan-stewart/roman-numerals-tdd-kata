@@ -7,5 +7,9 @@ describe('roman', function () {
       var result = roman.toRoman(1);
       assert.equal(result, 'I');
     });
+    it('should convert 2 to II', function () {
+      var result = roman.toRoman(2);
+      assert.equal(result, 'II');
+    });
   });
 });
