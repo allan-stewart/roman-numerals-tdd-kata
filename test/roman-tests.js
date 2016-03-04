@@ -16,5 +16,6 @@ describe('roman', function () {
     testToRoman(3, 'III');
     testToRoman(4, 'IV');
     testToRoman(5, 'V');
+    testToRoman(6, 'VI');
   });
 });
