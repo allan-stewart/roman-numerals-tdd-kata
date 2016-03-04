@@ -10,9 +10,10 @@ describe('roman', function () {
         assert.equal(result, expected);
       });
     }
-    
+
     testToRoman(1, 'I');
     testToRoman(2, 'II');
     testToRoman(3, 'III');
+    testToRoman(4, 'IV');
   });
 });
