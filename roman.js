@@ -17,10 +17,10 @@ exports.toRoman = function (input) {
   output += repeatResult.numerals;
   input -= repeatResult.subtracted;
 
-  if (input >= 4) {
-    output += 'IV';
-    input -= 4;
-  }
+  repeatResult = repeatNumerals(input, 4, 'IV');
+  output += repeatResult.numerals;
+  input -= repeatResult.subtracted;
+
   repeatResult = repeatNumerals(input, 1, 'I');
   output += repeatResult.numerals;
   input -= repeatResult.subtracted;
