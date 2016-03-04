@@ -69,5 +69,7 @@ describe('roman', function () {
     testToRoman(400, 'CD');
 
     testToRoman(500, 'D');
+
+    testToRoman(900, 'CM');
   });
 });
