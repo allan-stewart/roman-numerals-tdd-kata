@@ -63,5 +63,7 @@ describe('roman', function () {
     testToRoman(50, 'L');
 
     testToRoman(90, 'XC');
+
+    testToRoman(100, 'C');
   });
 });
