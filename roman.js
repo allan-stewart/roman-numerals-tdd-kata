@@ -1,5 +1,6 @@
 exports.toRoman = function (input) {
   var mapping = [
+    {numeral: 'M', value: 1000},
     {numeral: 'CM', value: 900},
     {numeral: 'D', value: 500},
     {numeral: 'CD', value: 400},
