@@ -61,5 +61,7 @@ describe('roman', function () {
     testToRoman(48, 'XLVIII');
     testToRoman(49, 'XLIX');
     testToRoman(50, 'L');
+
+    testToRoman(90, 'XC');
   });
 });
