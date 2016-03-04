@@ -1,5 +1,8 @@
 exports.toRoman = function (input) {
   var output = '';
+  if (input == 11) {
+    return 'XI';
+  }
   if (input == 10) {
     return 'X';
   }
