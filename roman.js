@@ -11,9 +11,10 @@ exports.toRoman = function (input) {
   var repeatResult;
 
   mapping.forEach(function (item) {
-    repeatResult = repeatNumerals(input, item.value, item.numeral);
-    output += repeatResult.numerals;
-    input -= repeatResult.subtracted;
+    while (input >= item.value) {
+      output += item.numeral;
+      input -= item.value;
+    }
   });
 
   return output;
