@@ -11,5 +11,9 @@ describe('roman', function () {
       var result = roman.toRoman(2);
       assert.equal(result, 'II');
     });
+    it('should convert 3 to III', function () {
+      var result = roman.toRoman(3);
+      assert.equal(result, 'III');
+    });
   });
 });
