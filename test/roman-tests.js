@@ -71,5 +71,7 @@ describe('roman', function () {
     testToRoman(500, 'D');
 
     testToRoman(900, 'CM');
+
+    testToRoman(1000, 'M');
   });
 });
