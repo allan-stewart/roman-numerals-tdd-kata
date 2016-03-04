@@ -1,5 +1,9 @@
 exports.toRoman = function (input) {
   var output = '';
+  if (input >= 40) {
+    output += 'XL';
+    input -= 40;
+  }
   while (input >= 10) {
     output += 'X';
     input -= 10;
