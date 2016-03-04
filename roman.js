@@ -1,6 +1,6 @@
 exports.toRoman = function (input) {
   var output = '';
-  if (input >= 10) {
+  while (input >= 10) {
     output += 'X';
     input -= 10;
   }
