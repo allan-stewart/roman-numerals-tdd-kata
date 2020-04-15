@@ -3,14 +3,14 @@ exports.toRoman = (input) => {
 
   const romanCases = [
     { condition: canUseC, symbol: "C", value: 100 },
-    { condition: caseXC, symbol: "XC", value: 90 },
+    { condition: canUseXC, symbol: "XC", value: 90 },
     { condition: canUseL, symbol: "L", value: 50 },
-    { condition: caseIL, symbol: "IL", value: 49 },
-    { condition: caseXL, symbol: "XL", value: 40 },
+    { condition: canUseIL, symbol: "IL", value: 49 },
+    { condition: canUseXL, symbol: "XL", value: 40 },
     { condition: canUseX, symbol: "X", value: 10 },
-    { condition: caseIX, symbol: "IX", value: 9 },
+    { condition: canUseIX, symbol: "IX", value: 9 },
     { condition: canUseV, symbol: "V", value: 5 },
-    { condition: caseIV, symbol: "IV", value: 4 },
+    { condition: canUseIV, symbol: "IV", value: 4 },
     { condition: canUseI, symbol: "I", value: 1 },
   ];
   romanCases.forEach((romanCase) => {
@@ -45,22 +45,22 @@ function canUseI(input) {
 
 // multiple character
 
-function caseXC(input) {
+function canUseXC(input) {
   return input >= 90;
 }
 
-function caseXL(input) {
+function canUseXL(input) {
   return input >= 40;
 }
 
-function caseIL(input) {
+function canUseIL(input) {
   return input >= 49;
 }
 
-function caseIX(input) {
+function canUseIX(input) {
   return input === 9;
 }
 
-function caseIV(input) {
+function canUseIV(input) {
   return input === 4;
 }

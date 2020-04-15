@@ -31,7 +31,6 @@ describe("roman", () => {
       [16, "XVI"],
       [38, "XXXVIII"],
       [88, "LXXXVIII"],
-      [200, "CC"],
     ].forEach(([input, expectedResult]) => {
       test(`should convert ${input} to ${expectedResult}`, () => {
         const result = roman.toRoman(input);
