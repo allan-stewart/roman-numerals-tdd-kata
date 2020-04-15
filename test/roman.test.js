@@ -2,22 +2,16 @@ const roman = require("../roman.js");
 
 describe("roman", () => {
   describe("only I symbol", () => {
-    test("should convert 1 to I", () => {
-      const result = roman.toRoman(1);
+    [
+      [1, "I"],
+      [2, "II"],
+      [3, "III"],
+    ].forEach(([input, expectedResult]) => {
+      test(`should convert ${input} to ${expectedResult}`, () => {
+        const result = roman.toRoman(input);
 
-      expect(result).toBe("I");
-    });
-
-    test("should convert 2 to II", () => {
-      const result = roman.toRoman(2);
-
-      expect(result).toBe("II");
-    });
-
-    test("should convert 3 to III", () => {
-      const result = roman.toRoman(3);
-
-      expect(result).toBe("III");
+        expect(result).toBe(expectedResult);
+      });
     });
   });
 
@@ -30,27 +24,21 @@ describe("roman", () => {
   });
 
   describe("only X symbol", () => {
-    test("should convert 10 to X", () => {
-      const result = roman.toRoman(10);
+    [
+      [10, "X"],
+      [20, "XX"],
+      [30, "XXX"],
+    ].forEach(([input, expectedResult]) => {
+      test(`should convert ${input} to ${expectedResult}`, () => {
+        const result = roman.toRoman(input);
 
-      expect(result).toBe("X");
-    });
-
-    test("should convert 20 to XX", () => {
-      const result = roman.toRoman(20);
-
-      expect(result).toBe("XX");
-    });
-
-    test("should convert 30 to XXX", () => {
-      const result = roman.toRoman(30);
-
-      expect(result).toBe("XXX");
+        expect(result).toBe(expectedResult);
+      });
     });
   });
 
   describe("only L symbol", () => {
-    test('should convert 50 to L', () => {
+    test("should convert 50 to L", () => {
       const result = roman.toRoman(50);
 
       expect(result).toBe("L");
@@ -58,96 +46,39 @@ describe("roman", () => {
   });
 
   describe("multiple symbols with addition only", () => {
-    test('should convert 6 to VI', () => {
-      const result = roman.toRoman(6);
+    [
+      [6, "VI"],
+      [7, "VII"],
+      [8, "VIII"],
+      [11, "XI"],
+      [16, "XVI"],
+      [38, "XXXVIII"],
+      [88, "LXXXVIII"],
+    ].forEach(([input, expectedResult]) => {
+      test(`should convert ${input} to ${expectedResult}`, () => {
+        const result = roman.toRoman(input);
 
-      expect(result).toBe('VI');
-    });
-
-    test('should convert 7 to VII', () => {
-      const result = roman.toRoman(7);
-
-      expect(result).toBe('VII');
-    });
-
-    test('should convert 8 to VIII', () => {
-      const result = roman.toRoman(8);
-
-      expect(result).toBe('VIII');
-    });
-
-    test('should convert 11 to XI', () => {
-      const result = roman.toRoman(11);
-
-      expect(result).toBe('XI');
-    });
-
-    test('should convert 16 to XVI', () => {
-      const result = roman.toRoman(16);
-
-      expect(result).toBe('XVI');
-    });
-
-    test('should convert 38 to XXXVIII', () => {
-      const result = roman.toRoman(38);
-
-      expect(result).toBe('XXXVIII');
-    });
-
-    test('should convert 89 to LXXXIX', () => {
-      const result = roman.toRoman(89);
-
-      expect(result).toBe('LXXXIX');
+        expect(result).toBe(expectedResult);
+      });
     });
   });
 
-  describe('multiple symbols with subtraction only', () => {
-    test('should convert 4 to IV', () => {
-      const result = roman.toRoman(4);
+  describe("multiple symbols with subtraction only", () => {
+    [
+      [4, "IV"],
+      [14, "XIV"],
+      [34, "XXXIV"],
+      [9, "IX"],
+      [39, "XXXIX"],
+      [40, "XL"],
+      [44, "XLIV"],
+      [49, "IL"],
+    ].forEach(([input, expectedResult]) => {
+      test(`should convert ${input} to ${expectedResult}`, () => {
+        const result = roman.toRoman(input);
 
-      expect(result).toBe('IV');
-    });
-
-    test('should convert 14 to XIV', () => {
-      const result = roman.toRoman(14);
-
-      expect(result).toBe('XIV');
-    });
-
-    test('should convert 34 to XIV', () => {
-      const result = roman.toRoman(34);
-
-      expect(result).toBe('XXXIV');
-    });
-
-    test('should convert 9 to IX', () => {
-      const result = roman.toRoman(9);
-
-      expect(result).toBe('IX');
-    });
-
-    test('should convert 39 to XXXIX', () => {
-      const result = roman.toRoman(39);
-
-      expect(result).toBe('XXXIX');
-    });
-
-    test('should convert 40 to XL', () => {
-      const result = roman.toRoman(40);
-
-      expect(result).toBe('XL');
-    });
-
-    test('should convert 44 to XLIV', () => {
-      const result = roman.toRoman(44);
-
-      expect(result).toBe('XLIV');
-    });
-
-    test('should convert 49 to IL', () => {
-      const result = roman.toRoman(49);
-
-      expect(result).toBe('IL');
+        expect(result).toBe(expectedResult);
+      });
     });
   });
 });
