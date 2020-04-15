@@ -1,6 +1,26 @@
 exports.toRoman = (input) => {
   let result = "";
 
+  if (input >= 50) {
+    result += "L";
+    input -= 50;
+  }
+
+  if (input === 49) {
+    result += "IL";
+    input -= 49;
+  }
+
+  if (input === 44) {
+    result += "XLIV";
+    input -= 44;
+  }
+
+  if (input === 40) {
+    result += "XL";
+    input -= 40;
+  }
+
   while (canUseX(input)) {
     result += "X";
     input -= 10;

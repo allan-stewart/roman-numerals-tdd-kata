@@ -49,6 +49,14 @@ describe("roman", () => {
     });
   });
 
+  describe("only L symbol", () => {
+    test('should convert 50 to L', () => {
+      const result = roman.toRoman(50);
+
+      expect(result).toBe("L");
+    });
+  });
+
   describe("multiple symbols with addition only", () => {
     test('should convert 6 to VI', () => {
       const result = roman.toRoman(6);
@@ -85,6 +93,12 @@ describe("roman", () => {
 
       expect(result).toBe('XXXVIII');
     });
+
+    test('should convert 89 to LXXXIX', () => {
+      const result = roman.toRoman(89);
+
+      expect(result).toBe('LXXXIX');
+    });
   });
 
   describe('multiple symbols with subtraction only', () => {
@@ -116,6 +130,24 @@ describe("roman", () => {
       const result = roman.toRoman(39);
 
       expect(result).toBe('XXXIX');
+    });
+
+    test('should convert 40 to XL', () => {
+      const result = roman.toRoman(40);
+
+      expect(result).toBe('XL');
+    });
+
+    test('should convert 44 to XLIV', () => {
+      const result = roman.toRoman(44);
+
+      expect(result).toBe('XLIV');
+    });
+
+    test('should convert 49 to IL', () => {
+      const result = roman.toRoman(49);
+
+      expect(result).toBe('IL');
     });
   });
 });
