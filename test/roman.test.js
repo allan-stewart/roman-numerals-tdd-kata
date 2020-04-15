@@ -1,33 +1,16 @@
 const roman = require("../roman.js");
 
 describe("roman", () => {
-  describe("only I symbol", () => {
+  describe("only one symbol", () => {
     [
       [1, "I"],
       [2, "II"],
       [3, "III"],
-    ].forEach(([input, expectedResult]) => {
-      test(`should convert ${input} to ${expectedResult}`, () => {
-        const result = roman.toRoman(input);
-
-        expect(result).toBe(expectedResult);
-      });
-    });
-  });
-
-  describe("only V symbol", () => {
-    test("should convert 5 to V", () => {
-      const result = roman.toRoman(5);
-
-      expect(result).toBe("V");
-    });
-  });
-
-  describe("only X symbol", () => {
-    [
+      [5, "V"],
       [10, "X"],
       [20, "XX"],
       [30, "XXX"],
+      [50, "L"],
     ].forEach(([input, expectedResult]) => {
       test(`should convert ${input} to ${expectedResult}`, () => {
         const result = roman.toRoman(input);
@@ -37,15 +20,7 @@ describe("roman", () => {
     });
   });
 
-  describe("only L symbol", () => {
-    test("should convert 50 to L", () => {
-      const result = roman.toRoman(50);
-
-      expect(result).toBe("L");
-    });
-  });
-
-  describe("multiple symbols with addition only", () => {
+  describe("multiple symbols with normal case (addition)", () => {
     [
       [6, "VI"],
       [7, "VII"],
@@ -63,7 +38,7 @@ describe("roman", () => {
     });
   });
 
-  describe("multiple symbols with subtraction only", () => {
+  describe("multiple symbols with subtraction", () => {
     [
       [4, "IV"],
       [14, "XIV"],
