@@ -1,50 +1,23 @@
 exports.toRoman = (input) => {
   let result = "";
 
-  if (input >= 50) {
-    result += "L";
-    input -= 50;
-  }
-
-  if (input === 49) {
-    result += "IL";
-    input -= 49;
-  }
-
-  if (input === 44) {
-    result += "XLIV";
-    input -= 44;
-  }
-
-  if (input === 40) {
-    result += "XL";
-    input -= 40;
-  }
-
-  while (canUseX(input)) {
-    result += "X";
-    input -= 10;
-  }
-
-  if (canUseIX(input)) {
-    result += "IX";
-    input -= 9;
-  }
-
-  if (canUseV(input)) {
-    result += "V";
-    input -= 5;
-  }
-
-  if (canUseIV(input)) {
-    result += "IV";
-    input -= 4;
-  }
-
-  while (canUseI(input)) {
-    result += "I";
-    input -= 1;
-  }
+  const romanCases = [
+    { condition: canUseL, symbol: "L", value: 50 },
+    { condition: caseIL, symbol: "IL", value: 49 },
+    { condition: caseXLIV, symbol: "XLIV", value: 44 },
+    { condition: caseXL, symbol: "XL", value: 40 },
+    { condition: canUseX, symbol: "X", value: 10 },
+    { condition: caseIX, symbol: "IX", value: 9 },
+    { condition: canUseV, symbol: "V", value: 5 },
+    { condition: caseIV, symbol: "IV", value: 4 },
+    { condition: canUseI, symbol: "I", value: 1 },
+  ];
+  romanCases.forEach((romanCase) => {
+    while (romanCase.condition(input)) {
+      result += romanCase.symbol;
+      input -= romanCase.value;
+    }
+  });
 
   return result;
 };
@@ -53,12 +26,20 @@ const canUseI = (input) => {
   return input >= 1;
 };
 
-function canUseIV(input) {
-  return input === 4;
+function caseXL(input) {
+  return input === 40;
 }
 
-function canUseIX(input) {
-  return input === 9;
+function caseXLIV(input) {
+  return input === 44;
+}
+
+function caseIL(input) {
+  return input === 49;
+}
+
+function canUseL(input) {
+  return input >= 50;
 }
 
 function canUseX(input) {
@@ -67,4 +48,12 @@ function canUseX(input) {
 
 function canUseV(input) {
   return input >= 5;
+}
+
+function caseIV(input) {
+  return input === 4;
+}
+
+function caseIX(input) {
+  return input === 9;
 }
