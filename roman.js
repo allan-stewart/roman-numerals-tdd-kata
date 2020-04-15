@@ -2,10 +2,13 @@ exports.toRoman = (input) => {
   let result = "";
 
   const romanCases = [
+    { condition: canUseM, symbol: "M", value: 1000 },
+    { condition: canUseCM, symbol: "CM", value: 900 },
+    { condition: canUseD, symbol: "D", value: 500 },
+    { condition: canUseCD, symbol: "CD", value: 400 },
     { condition: canUseC, symbol: "C", value: 100 },
     { condition: canUseXC, symbol: "XC", value: 90 },
     { condition: canUseL, symbol: "L", value: 50 },
-    { condition: canUseIL, symbol: "IL", value: 49 },
     { condition: canUseXL, symbol: "XL", value: 40 },
     { condition: canUseX, symbol: "X", value: 10 },
     { condition: canUseIX, symbol: "IX", value: 9 },
@@ -22,6 +25,14 @@ exports.toRoman = (input) => {
 
   return result;
 };
+
+function canUseM(input) {
+  return input >= 1000;
+}
+
+function canUseD(input) {
+  return input >= 500;
+}
 
 function canUseC(input) {
   return input >= 100;
@@ -45,16 +56,20 @@ function canUseI(input) {
 
 // multiple character
 
+function canUseCM(input) {
+  return input >= 900;
+}
+
+function canUseCD(input) {
+  return input >= 400;
+}
+
 function canUseXC(input) {
   return input >= 90;
 }
 
 function canUseXL(input) {
   return input >= 40;
-}
-
-function canUseIL(input) {
-  return input >= 49;
 }
 
 function canUseIX(input) {

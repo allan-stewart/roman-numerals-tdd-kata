@@ -13,6 +13,9 @@ describe("roman", () => {
       [50, "L"],
       [100, "C"],
       [300, "CCC"],
+      [500, "D"],
+      [1000, "M"],
+      [3000, "MMM"],
     ].forEach(([input, expectedResult]) => {
       test(`should convert ${input} to ${expectedResult}`, () => {
         const result = roman.toRoman(input);
@@ -31,6 +34,8 @@ describe("roman", () => {
       [16, "XVI"],
       [38, "XXXVIII"],
       [88, "LXXXVIII"],
+      [800, "DCCC"],
+      [3500, "MMMD"],
     ].forEach(([input, expectedResult]) => {
       test(`should convert ${input} to ${expectedResult}`, () => {
         const result = roman.toRoman(input);
@@ -49,10 +54,15 @@ describe("roman", () => {
       [39, "XXXIX"],
       [40, "XL"],
       [44, "XLIV"],
-      [49, "IL"],
+      [49, "XLIX"],
       [90, "XC"],
       [94, "XCIV"],
       [99, "XCIX"],
+      [400, "CD"],
+      [490, "CDXC"],
+      [900, "CM"],
+      [949, "CMXLIX"],
+      [2014, "MMXIV"],
     ].forEach(([input, expectedResult]) => {
       test(`should convert ${input} to ${expectedResult}`, () => {
         const result = roman.toRoman(input);
