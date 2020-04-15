@@ -6,12 +6,12 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "mocha": "^2.4.5"
+  "dependencies": {
+    "jest": "^25.3.0"
   },
   "scripts": {
-    "test": "mocha --watch"
+    "test": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "author": "Allan Stewart",
   "license": "MIT",
