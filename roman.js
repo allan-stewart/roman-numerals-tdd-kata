@@ -1,19 +1,20 @@
 exports.toRoman = (input) => {
-  if (input === 1) {
-    return "I";
-  } else if (input == 2) {
-    return "II";
-  } else if (input === 3) {
-    return "III";
+  var result = "";
+
+  while (input >= 10) {
+    result += "X";
+    input -= 10;
   }
 
-  if (input === 10) {
-    return "X";
-  } else if (input === 20) {
-    return "XX";
-  } else if (input === 30) {
-    return "XXX";
+  if (input >= 5) {
+    result += "V";
+    input -= 5;
+  } 
+
+  while (input >= 1) {
+    result += "I";
+    input -= 1;
   }
 
-  return "V";
+  return result;
 };

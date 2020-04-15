@@ -48,4 +48,42 @@ describe("roman", () => {
       expect(result).toBe("XXX");
     });
   });
+
+  describe("multiple symbols with addition only", () => {
+    test('should convert 6 to VI', () => {
+      const result = roman.toRoman(6);
+
+      expect(result).toBe('VI');
+    });
+
+    test('should convert 7 to VII', () => {
+      const result = roman.toRoman(7);
+
+      expect(result).toBe('VII');
+    });
+
+    test('should convert 8 to VIII', () => {
+      const result = roman.toRoman(8);
+
+      expect(result).toBe('VIII');
+    });
+
+    test('should convert 11 to XI', () => {
+      const result = roman.toRoman(11);
+
+      expect(result).toBe('XI');
+    });
+
+    test('should convert 16 to XVI', () => {
+      const result = roman.toRoman(16);
+
+      expect(result).toBe('XVI');
+    });
+
+    test('should convert 38 to XXXVIII', () => {
+      const result = roman.toRoman(38);
+
+      expect(result).toBe('XXXVIII');
+    });
+  });
 });
